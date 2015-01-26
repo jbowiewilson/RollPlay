@@ -17,6 +17,13 @@ public class UI : MonoBehaviour {
 	private float cooldownW, cooldownH, cooldownX, cooldownY;
 	private Rect cooldownRect;
 
+	//Score
+	private int totalScore;
+	private string scoreText;
+	private Rect scoreRect;
+	private float scoreW, scoreH, scoreX, scoreY;
+	private float score;
+
 	// Use this for initialization
 	void Start () {
 		//Cooldown
@@ -39,15 +46,27 @@ public class UI : MonoBehaviour {
 		restartX = (Screen.width - restartW);
 		restartY = (restartH);
 		restartRect = new Rect (restartX, restartY, restartW, restartH);
+
+		//Score
+		scoreW = (Screen.width/9);
+		scoreH = (Screen.height/9);
+		scoreX = (0);
+		scoreY = (0);
+		scoreRect = new Rect (scoreX, scoreY, scoreW, scoreH);
+		
+		score = Hero.GetComponent<Hero>().heroScore;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		Cooldown = !(Hero.GetComponent<Hero>().staminaRecovering);
+		score = Hero.GetComponent<Hero>().heroScore;
 	}
 
 	void OnGUI () {
 		Cooldown = GUI.Toggle(cooldownRect, Cooldown, "Cooldown");
+
+		GUI.Label(scoreRect, "Score: " + score);
 
 		if (GUI.Button (exitRect, "Exit")) {
 			Application.Quit();
