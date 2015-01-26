@@ -96,16 +96,21 @@ public class GateHandler : MonoBehaviour {
 				liftReseting = false;
 				liftFinishing = true;
 				if (orientationX) {
-					GateExit1.rigidbody.velocity += new Vector3 (3, 0, 0);
-					GateExit2.rigidbody.velocity += new Vector3 (-3, 0, 0);
+					GateExit1.rigidbody.velocity = new Vector3 (doorSpeed, 0, 0);
+					GateExit2.rigidbody.velocity = new Vector3 (-doorSpeed, 0, 0);
 				}
 
 				else if (orientationZ) {
-
+					GateExit1.rigidbody.velocity = new Vector3 (0, 0, doorSpeed);
+					GateExit2.rigidbody.velocity = new Vector3 (0, 0, -doorSpeed);
 				}
 
 				if (GateExit1.transform.position == new Vector3 (gateExit1Closed.x, gateExit1Closed.y + liftVertical, gateExit1Closed.z) && GateExit2.transform.position == new Vector3 (gateExit2Closed.x, gateExit2Closed.y + liftVertical, gateExit2Closed.z)) {
+					GateExit1.rigidbody.velocity = new Vector3 (0, 0, 0);
+					GateExit2.rigidbody.velocity = new Vector3 (0, 0, 0);
+
 					//Begin Decent
+
 					Lift.rigidbody.isKinematic = false;
 					Lift.rigidbody.velocity = new Vector3 (0, -liftSpeed, 0);
 				}
