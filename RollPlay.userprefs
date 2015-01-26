@@ -1,0 +1,27 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GateHandler.cs">
+    <Files>
+      <File FileName="..\..\Downloads\CameraShakeS.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Hero.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Destructible.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\EnergyRechargeTrigger.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CautionTrigger.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\AbyssTrigger.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CameraScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\RespawnHandler.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SpeedBoostTrigger.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\LiftTrigger.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ViewHandler.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SlickTrigger.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GateHandler.cs" Line="105" Column="6" />
+      <File FileName="Assets\Scripts\JumpTrigger.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\RampHandler.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
