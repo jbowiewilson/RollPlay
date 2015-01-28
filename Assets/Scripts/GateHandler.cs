@@ -10,7 +10,7 @@ public class GateHandler : MonoBehaviour {
 	private Vector3 gateEntrance1Closed, gateEntrance2Closed, gateEntrance1Open, gateEntrance2Open;
 
 	private float liftSpeed = 2;
-	private float doorSpeed;
+	private float doorSpeed = .2f;
 	private Vector3 liftStart, liftEnd;
 	private float stallTime, stallDelay = 2;
 	public float liftVertical = 2.5f;
@@ -93,19 +93,25 @@ public class GateHandler : MonoBehaviour {
 
 		else if (liftReseting) {
 			if ((Time.fixedTime - stallTime) >= stallDelay) {
-				liftReseting = false;
-				liftFinishing = true;
+
 				if (orientationX) {
-					GateExit1.rigidbody.velocity += new Vector3 (3, 0, 0);
-					GateExit2.rigidbody.velocity += new Vector3 (-3, 0, 0);
+				
+					GateExit1.transform.position = new Vector3 (GateExit1.transform.position.x + doorSpeed, GateExit1.transform.position.y, GateExit1.transform.position.z);
+					GateExit2.transform.position = new Vector3 (GateExit2.transform.position.x - doorSpeed, GateExit2.transform.position.y, GateExit2.transform.position.z);
+
 				}
 
 				else if (orientationZ) {
+
+					GateExit1.transform.position = new Vector3 (GateExit1.transform.position.x, GateExit1.transform.position.y, GateExit1.transform.position.z - doorSpeed);
+					GateExit2.transform.position = new Vector3 (GateExit2.transform.position.x, GateExit2.transform.position.y, GateExit2.transform.position.z + doorSpeed);
 
 				}
 
 				if (GateExit1.transform.position == new Vector3 (gateExit1Closed.x, gateExit1Closed.y + liftVertical, gateExit1Closed.z) && GateExit2.transform.position == new Vector3 (gateExit2Closed.x, gateExit2Closed.y + liftVertical, gateExit2Closed.z)) {
 					//Begin Decent
+					liftReseting = false;
+					liftFinishing = true;
 					Lift.rigidbody.isKinematic = false;
 					Lift.rigidbody.velocity = new Vector3 (0, -liftSpeed, 0);
 				}
