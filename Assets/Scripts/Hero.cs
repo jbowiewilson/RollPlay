@@ -18,6 +18,7 @@ public class Hero : MonoBehaviour {
 	private int heroState = 0;
 	private bool heroSelected = false;
 	private bool heroStateChanged = false;
+	public float heroScore = 0;
 
 	//Hero Movement
 	public bool canShift = true;
@@ -263,11 +264,15 @@ public class Hero : MonoBehaviour {
 
 	void OnCollisionEnter (Collision collision) {
 		//MainCamera.GetComponent<CameraScript>().MicroShake();
+		//Increase Score
 		if (collision.gameObject.tag == "Wall") {
 			MainCamera.GetComponent<CameraScript>().MicroShake();
+			heroScore++;
 		}
 		if (collision.gameObject.tag == "Pin") {
 			MainCamera.GetComponent<CameraScript>().LargeShake();
+			heroScore++;
 		}
+		heroScore++;
 	}
 }
