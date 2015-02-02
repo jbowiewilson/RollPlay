@@ -255,11 +255,18 @@ public class Hero : MonoBehaviour {
 		//Key Colliding
 		if (collision.gameObject.tag == "KeyBlue") {
 			keyBlue = true;
+			heroScore += 50;
 		}
-		if (collision.gameObject.tag == "KeyRed") {
+		else if (collision.gameObject.tag == "KeyRed") {
 			keyRed = true;
+			heroScore += 50;
 		}
 		//Key Collided
+
+		else {
+			heroScore += 5;
+		}
+
 	}
 
 	void OnCollisionEnter (Collision collision) {
@@ -267,12 +274,17 @@ public class Hero : MonoBehaviour {
 		//Increase Score
 		if (collision.gameObject.tag == "Wall") {
 			MainCamera.GetComponent<CameraScript>().MicroShake();
-			heroScore++;
+			heroScore += 5;
 		}
-		if (collision.gameObject.tag == "Pin") {
+		else if (collision.gameObject.tag == "Pin") {
 			MainCamera.GetComponent<CameraScript>().LargeShake();
-			heroScore++;
+			heroScore += 25;
 		}
-		heroScore++;
+		else if (collision.gameObject.tag == "Treasure") {
+			heroScore += 100;
+		}
+		else {
+			//heroScore += 5;
+		}
 	}
 }

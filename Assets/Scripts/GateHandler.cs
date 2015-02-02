@@ -95,40 +95,20 @@ public class GateHandler : MonoBehaviour {
 			if ((Time.fixedTime - stallTime) >= stallDelay) {
 
 				if (orientationX) {
-<<<<<<< HEAD
-					GateExit1.rigidbody.velocity = new Vector3 (doorSpeed, 0, 0);
-					GateExit2.rigidbody.velocity = new Vector3 (-doorSpeed, 0, 0);
-				}
-
-				else if (orientationZ) {
-					GateExit1.rigidbody.velocity = new Vector3 (0, 0, doorSpeed);
-					GateExit2.rigidbody.velocity = new Vector3 (0, 0, -doorSpeed);
-=======
-				
 					GateExit1.transform.position = new Vector3 (GateExit1.transform.position.x + doorSpeed, GateExit1.transform.position.y, GateExit1.transform.position.z);
 					GateExit2.transform.position = new Vector3 (GateExit2.transform.position.x - doorSpeed, GateExit2.transform.position.y, GateExit2.transform.position.z);
-
 				}
 
 				else if (orientationZ) {
-
 					GateExit1.transform.position = new Vector3 (GateExit1.transform.position.x, GateExit1.transform.position.y, GateExit1.transform.position.z - doorSpeed);
 					GateExit2.transform.position = new Vector3 (GateExit2.transform.position.x, GateExit2.transform.position.y, GateExit2.transform.position.z + doorSpeed);
-
->>>>>>> origin/staging
 				}
 
 				if (GateExit1.transform.position == new Vector3 (gateExit1Closed.x, gateExit1Closed.y + liftVertical, gateExit1Closed.z) && GateExit2.transform.position == new Vector3 (gateExit2Closed.x, gateExit2Closed.y + liftVertical, gateExit2Closed.z)) {
-					GateExit1.rigidbody.velocity = new Vector3 (0, 0, 0);
-					GateExit2.rigidbody.velocity = new Vector3 (0, 0, 0);
 
 					//Begin Decent
-<<<<<<< HEAD
-
-=======
 					liftReseting = false;
 					liftFinishing = true;
->>>>>>> origin/staging
 					Lift.rigidbody.isKinematic = false;
 					Lift.rigidbody.velocity = new Vector3 (0, -liftSpeed, 0);
 				}
