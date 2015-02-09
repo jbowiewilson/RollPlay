@@ -60,6 +60,10 @@ public class UI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Cooldown = !(Hero.GetComponent<Hero>().staminaRecovering);
+		if (score < Hero.GetComponent<Hero> ().heroScore) {
+
+		}
+
 		score = Hero.GetComponent<Hero>().heroScore;
 	}
 
